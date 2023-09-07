@@ -1,3 +1,5 @@
+from json import JSONDecodeError
+
 import requests
 from .config import Server, DataFetcherConfig
 from . import Base
@@ -9,8 +11,10 @@ class DataFetcherMain:
         def call_api(endpoint, params: dict = {}):
             response = requests.get(endpoint, params=params, headers=Server.Auth.request_header())
             response.raise_for_status()
-            obj = response.json()
-            return obj
+            try:
+                return response.json()
+            except JSONDecodeError:
+                return {}
 
     @classmethod
     @Base.Decorators.format_endpoint

@@ -17,6 +17,7 @@ class DataFetcher:
         @classmethod
         def fetch_visitor_registration_system_id_using_email_for_non_bss(cls, email):
             return cls.list(
+                endpoint="/students/fetch_visitor_registration_system_id_using_email_for_non_bss",
                 single=True,
                 params={
                     "email": email

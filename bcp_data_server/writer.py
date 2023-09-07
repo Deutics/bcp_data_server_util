@@ -1,3 +1,5 @@
+from json import JSONDecodeError
+
 import requests
 from .config import Server
 from . import Base
@@ -18,8 +20,10 @@ class DataWriterMain:
                 response = getattr(requests, method)(endpoint, data=payload, params=params,
                                                      headers=Server.Auth.request_header())
                 response.raise_for_status()
-                obj = response.json()
-                return obj
+                try:
+                    return response.json()
+                except JSONDecodeError:
+                    return response.text
 
         def __init__(self, endpoint, payload, method, params: dict = {}):
             self.endpoint = endpoint
