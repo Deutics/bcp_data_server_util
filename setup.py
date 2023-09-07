@@ -13,10 +13,10 @@ except Exception:
 setup(
 
     # Project name:
-    name='bcp_data_server',
+    name='bcp-data-server',
 
     # Packages to include in the distribution:
-    packages=['bcp_data_server'],
+    packages=find_packages(','),
 
     # Project version number:
     version='1.0.0',
