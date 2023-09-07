@@ -16,7 +16,7 @@ setup(
     name='bcp-data-server',
 
     # Packages to include in the distribution:
-    packages=find_packages(),
+    packages=['bcp_data_server'],
 
     # Project version number:
     version='1.0.0',
