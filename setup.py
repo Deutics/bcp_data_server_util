@@ -13,7 +13,7 @@ except Exception:
 setup(
 
     # Project name:
-    name='bcp-data-server',
+    name='bcp_data_server',
 
     # Packages to include in the distribution:
     packages=['bcp_data_server'],
