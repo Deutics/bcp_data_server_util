@@ -1,20 +1,9 @@
 import requests
 from .config import Server, DataFetcherConfig
+from . import Base
 
 
 class DataFetcherMain:
-    class Decorators:
-        @staticmethod
-        def format_endpoint(function):
-            def function_to_execute(cls, endpoint=None, *args, **kwargs):
-                formatted_endpoint = '/'.join(
-                    (Server.base_url.strip("/"),
-                     cls._endpoint.strip("/"))) + "/" if not endpoint else endpoint
-                return function(cls, formatted_endpoint, *args, **kwargs)
-
-            function_to_execute.__name__ = function.__name__
-            return function_to_execute
-
     class Helpers:
         @staticmethod
         def call_api(endpoint, params: dict = {}):
@@ -24,18 +13,21 @@ class DataFetcherMain:
             return obj
 
     @classmethod
-    @Decorators.format_endpoint
+    @Base.Decorators.format_endpoint
     def detail(cls, endpoint, identifier, params: dict = {}):
         endpoint += f"{identifier}/"
         return cls.Helpers.call_api(endpoint, params=params)
 
     @classmethod
-    @Decorators.format_endpoint
+    @Base.Decorators.format_endpoint
     def _list(cls, endpoint, params: dict = {}, single=False, count=None):
         if single:
             params['limit'] = 1
         elif count and count < DataFetcherConfig.list_size:
-            params['limit'] = count
+            if count == -1:
+                params['limit'] = DataFetcherConfig.list_size
+            else:
+                params['limit'] = count
         else:
             params['limit'] = DataFetcherConfig.list_size
         data = cls.Helpers.call_api(endpoint, params=params)
@@ -50,7 +42,8 @@ class DataFetcherMain:
                     _count += 1
                     yield item
                 if count and _count >= count:
-                    return
+                    if count != -1:
+                        return
                 for item in cls.list(data["next"], params={}, single=False, count=count and (count - _count)):
                     yield item
             else:
