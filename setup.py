@@ -1,4 +1,5 @@
 from distutils.core import setup
+from setuptools import find_packages
 import os
 
 # Optional project description in README.md:
@@ -12,10 +13,10 @@ except Exception:
 setup(
 
     # Project name:
-    name='bcp-data-server',
+    name='bcp_data_server',
 
     # Packages to include in the distribution:
-    packages=['bcp_data_server'],
+    packages=find_packages(),
 
     # Project version number:
     version='1.0.0',
