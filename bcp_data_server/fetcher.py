@@ -1,8 +1,10 @@
 from json import JSONDecodeError
 
 import requests
-from .config import Server, DataFetcherConfig
+from dateutil import parser
+
 from . import Base
+from .config import Server, DataFetcherConfig
 
 
 class DataFetcherMain:
@@ -37,12 +39,14 @@ class DataFetcherMain:
         data = cls.Helpers.call_api(endpoint, params=params)
         if single:
             if data.get("results"):
+                cls.clean_dates(data["results"][0])
                 yield data["results"][0]
             return
         if data.get("results"):
             if data.get("next"):
                 _count = 0
                 for item in data['results']:
+                    cls.clean_dates(item)
                     _count += 1
                     yield item
                 if count and _count >= count:
@@ -53,6 +57,7 @@ class DataFetcherMain:
                     yield item
             else:
                 for item in data['results']:
+                    cls.clean_dates(item)
                     yield item
         return []
 
@@ -63,3 +68,16 @@ class DataFetcherMain:
             response = list(response)
             return response and response[0]
         return response
+
+    @classmethod
+    def clean_dates(cls, result):
+        if isinstance(result, dict):
+            for _date in cls._dates:
+                if result.get(_date):
+                    result[_date] = parser.parse(result[_date])
+        if isinstance(result, list):
+            for obj in result:
+                for _date in cls._dates:
+                    if result.get(_date):
+                        result[_date] = parser.parse(result[_date])
+        return result
