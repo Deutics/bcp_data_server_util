@@ -48,7 +48,8 @@ class DataFetcherMain:
                 if count and _count >= count:
                     if count != -1:
                         return
-                for item in cls.list(data["next"], params={}, single=False, count=count and (count - _count)):
+                for item in cls.list(data["next"], params={}, single=False,
+                                     count=count and ((count - _count) if count != -1 else -1)):
                     yield item
             else:
                 for item in data['results']:

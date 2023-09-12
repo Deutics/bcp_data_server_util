@@ -3,6 +3,7 @@ from ..fetcher import DataFetcherMain
 
 class DataFetcher:
     class Branch(DataFetcherMain):
+
         _endpoint = "/branches"
 
     class Region(DataFetcherMain):
