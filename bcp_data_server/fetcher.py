@@ -46,8 +46,8 @@ class DataFetcherMain:
             if data.get("next"):
                 _count = 0
                 for item in data['results']:
-                    cls.clean_dates(item)
                     _count += 1
+                    cls.clean_dates(item)
                     yield item
                 if count and _count >= count:
                     if count != -1:
@@ -71,13 +71,7 @@ class DataFetcherMain:
 
     @classmethod
     def clean_dates(cls, result):
-        if isinstance(result, dict):
-            for _date in cls._dates:
-                if result.get(_date):
-                    result[_date] = parser.parse(result[_date])
-        if isinstance(result, list):
-            for obj in result:
-                for _date in cls._dates:
-                    if result.get(_date):
-                        result[_date] = parser.parse(result[_date])
+        for _date in cls._dates:
+            if result.get(_date):
+                result[_date] = parser.parse(result[_date])
         return result
