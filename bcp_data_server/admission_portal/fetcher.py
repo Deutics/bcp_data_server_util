@@ -15,7 +15,8 @@ class DataFetcher:
         _endpoint = "/cities"
 
     class Student(DataFetcherMain):
-        _dates = ['date_of_birth']
+        _dates = ['admission_wef', 'date_of_birth', 'start_date', 'end_date', 'left_date', 'indemnity_wef',
+                  'last_day_in_school']
         _endpoint = "/students"
 
         @classmethod
@@ -29,15 +30,15 @@ class DataFetcher:
             )
 
     class TeacherSubject(DataFetcherMain):
-        _dates = ['updt_time', 'rcrd_status_dt']
+        _dates = []
         _endpoint = "/teacher_subjects"
 
     class VMRegister(DataFetcherMain):
-        _dates = []
+        _dates = ['vis_date','updt_time','time_out','time_in','entered_on','close_date']
         _endpoint = "/vm_register"
 
     class StudentSubject(DataFetcherMain):
-        _dates = ['vis_date', 'updt_time', 'time_out', 'time_in', 'entered_on', 'close_date', 'rcrd_status_dt']
+        _dates = ['updt_time', 'rcrd_status_dt']
         _endpoint = "/students_subject"
 
     class Role(DataFetcherMain):
@@ -62,7 +63,7 @@ class DataFetcher:
 
     class Registration(DataFetcherMain):
         _dates = ['date_of_birth', 'registration_date', 'admission_date', 'updt_time', 'deposit_date', 'reg_canc_date',
-                  'interview_date', 'entered_on']
+                  'interview_date', 'entered_on','taxpayer']
         _endpoint = "/registrations"
 
     class Package(DataFetcherMain):
