@@ -48,7 +48,9 @@ setup(
 
     # List project dependencies:
     install_requires=[
-        'requests'
+        'requests',
+        'pytz',
+        'python-dateutil'
     ],
 
     # https://pypi.org/classifiers/

@@ -2,6 +2,7 @@ from json import JSONDecodeError
 
 import requests
 from dateutil import parser
+from pytz import timezone
 
 from . import Base
 from .config import Server, DataFetcherConfig
@@ -73,5 +74,5 @@ class DataFetcherMain:
     def clean_dates(cls, result):
         for _date in cls._dates:
             if result.get(_date):
-                result[_date] = parser.parse(result[_date])
+                result[_date] = timezone('Asia/Karachi').localize(parser.parse(result[_date]))
         return result
