@@ -21,8 +21,9 @@ class DataFetcherMain:
 
     @classmethod
     @Base.Decorators.format_endpoint
-    def detail(cls, endpoint, identifier, params: dict = {}):
-        endpoint += f"{identifier}/"
+    def detail(cls, endpoint, identifier=None, params: dict = {}):
+        if identifier is None:
+            endpoint += f"{identifier}/"
         return cls.Helpers.call_api(endpoint, params=params)
 
     @classmethod
