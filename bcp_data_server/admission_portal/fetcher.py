@@ -33,8 +33,12 @@ class DataFetcher:
         _endpoint = "/teacher_subjects"
 
     class VMRegister(DataFetcherMain):
-        _dates = ['vis_date','updt_time','time_out','time_in','entered_on','close_date']
+        _dates = ['vis_date', 'updt_time', 'time_out', 'time_in', 'entered_on', 'close_date']
         _endpoint = "/vm_register"
+
+    class VMRegisterPre(DataFetcherMain):
+        _dates = ['vis_date', 'time_out', 'time_in', 'entered_on', 'close_date', 'updt_time']
+        _endpoint = "/vm_register_pre"
 
     class StudentSubject(DataFetcherMain):
         _dates = ['updt_time', 'rcrd_status_dt']
@@ -62,7 +66,7 @@ class DataFetcher:
 
     class Registration(DataFetcherMain):
         _dates = ['date_of_birth', 'registration_date', 'admission_date', 'updt_time', 'deposit_date', 'reg_canc_date',
-                  'interview_date', 'entered_on','taxpayer']
+                  'interview_date', 'entered_on', 'taxpayer']
         _endpoint = "/registrations"
 
     class Package(DataFetcherMain):

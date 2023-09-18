@@ -3,4 +3,4 @@ from ..writer import DataWriterMain
 
 class DataWriter:
     class VMRegister(DataWriterMain):
-        _endpoint = "/vm_register"
+        _endpoint = "/vm_register_pre"
