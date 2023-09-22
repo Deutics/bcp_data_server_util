@@ -25,3 +25,87 @@ class DataFetcher:
     class TeacherGroups(DataFetcherMain):
         _dates = []
         _endpoint = "/teacher_groups"
+
+    class Months(DataFetcherMain):
+        _dates = []
+        _endpoint = "/months"
+
+    class Priorities(DataFetcherMain):
+        _dates = []
+        _endpoint = "/priorities"
+
+    class SchoolGroups(DataFetcherMain):
+        _dates = []
+        _endpoint = "/school_groups"
+
+    class UserWings(DataFetcherMain):
+        _dates = []
+        _endpoint = "/user_wings"
+
+    class Wings(DataFetcherMain):
+        _dates = []
+        _endpoint = "/wings"
+
+    class Sections(DataFetcherMain):
+        _dates = []
+        _endpoint = "/sections"
+
+    class Classes(DataFetcherMain):
+        _dates = []
+        _endpoint = "/classes"
+
+    class EmergencyContacts(DataFetcherMain):
+        _dates = []
+        _endpoint = "/emergency_contacts"
+
+    class Employees(DataFetcherMain):
+        _dates = []
+        _endpoint = "/employees"
+
+    class EmployeeRoles(DataFetcherMain):
+        _dates = []
+        _endpoint = "/employee_roles"
+
+    class EmployeeScope(DataFetcherMain):
+        _dates = []
+        _endpoint = "/employee_scope"
+
+    class EmployeeVis(DataFetcherMain):
+        _dates = []
+        _endpoint = "/employee_vis"
+
+    class GpaInfo(DataFetcherMain):
+        _dates = []
+        _endpoint = "/gpa_info"
+
+    class Assessments(DataFetcherMain):
+        _dates = []
+        _endpoint = "/assessments"
+
+    class Groups(DataFetcherMain):
+        _dates = []
+        _endpoint = "/groups"
+
+    class Parents(DataFetcherMain):
+        _dates = []
+        _endpoint = "/parents"
+
+    class Siblings(DataFetcherMain):
+        _dates = []
+        _endpoint = "/siblings"
+
+    class Subjects(DataFetcherMain):
+        _dates = []
+        _endpoint = "/subjects"
+
+    class Attendance(DataFetcherMain):
+        _dates = []
+        _endpoint = "/attendance"
+
+    class Students(DataFetcherMain):
+        _dates = []
+        _endpoint = "/students"
+
+    class OffDays(DataFetcherMain):
+        _dates = []
+        _endpoint = "/off_days"
