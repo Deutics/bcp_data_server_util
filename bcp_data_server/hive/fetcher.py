@@ -109,3 +109,11 @@ class DataFetcher:
     class OffDays(DataFetcherMain):
         _dates = []
         _endpoint = "/off_days"
+
+    class Regions(DataFetcherMain):
+        _dates = []
+        _endpoint = "/regions"
+
+    class Branches(DataFetcherMain):
+        _dates = []
+        _endpoint = "/branch"
