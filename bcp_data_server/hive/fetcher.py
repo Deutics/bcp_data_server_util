@@ -117,3 +117,24 @@ class DataFetcher:
     class Branches(DataFetcherMain):
         _dates = []
         _endpoint = "/branch"
+
+    class Filter:
+        class cities_by_region(DataFetcherMain):
+            _dates = []
+            _endpoint = "/filters/cities_by_region"
+
+        class campuses_by_city(DataFetcherMain):
+            _dates = []
+            _endpoint = "/filters/campuses_by_city"
+
+        class classes_by_campus(DataFetcherMain):
+            _dates = []
+            _endpoint = "/filters/classes_by_campus"
+
+        class teacher_by_subject(DataFetcherMain):
+            _dates = []
+            _endpoint = "/filters/teacher_by_subject"
+
+        class subjects_by_class(DataFetcherMain):
+            _dates = []
+            _endpoint = "/filters/subjects_by_class"
