@@ -22,7 +22,7 @@ class DataFetcherMain:
     @classmethod
     @Base.Decorators.format_endpoint
     def detail(cls, endpoint, identifier=None, params: dict = {}):
-        if identifier is None:
+        if identifier is not None:
             endpoint += f"{identifier}/"
         return cls.Helpers.call_api(endpoint, params=params)
 
