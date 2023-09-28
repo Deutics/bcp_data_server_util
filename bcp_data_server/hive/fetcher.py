@@ -82,6 +82,10 @@ class DataFetcher:
         _dates = []
         _endpoint = "/assessments"
 
+    class Summary(DataFetcherMain):
+        _dates = []
+        _endpoint = "/assessments/summary"
+
     class Groups(DataFetcherMain):
         _dates = []
         _endpoint = "/groups"
