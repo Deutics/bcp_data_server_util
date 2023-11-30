@@ -20,6 +20,10 @@ class DataFetcher:
 
     class Section(DataFetcherMain):
         _dates = []
+        _endpoint = "/section"
+
+    class Sections(DataFetcherMain):
+        _dates = []
         _endpoint = "/sections"
 
     class TeacherGroups(DataFetcherMain):
@@ -45,10 +49,6 @@ class DataFetcher:
     class Wings(DataFetcherMain):
         _dates = []
         _endpoint = "/wings"
-
-    class Sections(DataFetcherMain):
-        _dates = []
-        _endpoint = "/sections"
 
     class Classes(DataFetcherMain):
         _dates = []
@@ -121,6 +121,7 @@ class DataFetcher:
     class Branches(DataFetcherMain):
         _dates = []
         _endpoint = "/branch"
+
 
     class Filter:
         class cities_by_region(DataFetcherMain):
