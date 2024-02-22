@@ -129,6 +129,9 @@ class DataFetcher:
     class AssessmentSection(DataFetcherMain):
         _dates = []
         _endpoint = "/assessment/section"
+    class AssessmentRegion(DataFetcherMain):
+        _dates = []
+        _endpoint = "/assessment/region"
 
     class Filter:
         class cities_by_region(DataFetcherMain):
