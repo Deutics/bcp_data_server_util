@@ -126,6 +126,10 @@ class DataFetcher:
         _dates = []
         _endpoint = "/assessment"
 
+        class BranchAttendanceAndScoreCumulative(DataFetcherMain):
+            _dates = []
+            _endpoint = "/assessment/branch__attendance__and__score__cumulative"
+
     class AssessmentSection(DataFetcherMain):
         _dates = []
         _endpoint = "/assessment/section"
