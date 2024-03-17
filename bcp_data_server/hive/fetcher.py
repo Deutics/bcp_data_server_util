@@ -134,6 +134,10 @@ class DataFetcher:
         _dates = []
         _endpoint = "/assessment/region"
 
+    class AcademicYear(DataFetcherMain):
+        _dates = []
+        _endpoint = "/academic_year"
+
     class Filter:
         class cities_by_region(DataFetcherMain):
             _dates = []
