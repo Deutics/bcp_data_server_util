@@ -18,6 +18,10 @@ class DataFetcher:
         _dates = []
         _endpoint = "/branches"
 
+    class City(DataFetcherMain):
+        _dates = []
+        _endpoint = "/city"
+
     class Section(DataFetcherMain):
         _dates = []
         _endpoint = "/section"
