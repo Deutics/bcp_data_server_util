@@ -14,17 +14,9 @@ class DataFetcher:
         _dates = []
         _endpoint = "/employees"
 
-    class Branch(DataFetcherMain):
-        _dates = []
-        _endpoint = "/branches"
-
     class City(DataFetcherMain):
         _dates = []
         _endpoint = "/city"
-
-    class Section(DataFetcherMain):
-        _dates = []
-        _endpoint = "/section"
 
     class Sections(DataFetcherMain):
         _dates = []
@@ -147,14 +139,6 @@ class DataFetcher:
         _endpoint = "/academic_year"
 
     class Filter:
-        class cities_by_region(DataFetcherMain):
-            _dates = []
-            _endpoint = "/branch/cities_in_region"
-
-        class campuses_by_city(DataFetcherMain):
-            _dates = []
-            _endpoint = "/branch/campuses_in_city/"
-
         class classes_by_campus(DataFetcherMain):
             _dates = []
             _endpoint = "/students/classes_by_campus/"
