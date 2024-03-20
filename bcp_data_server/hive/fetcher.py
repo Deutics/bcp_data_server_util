@@ -138,6 +138,12 @@ class DataFetcher:
         _dates = []
         _endpoint = "/academic_year"
 
+    class Report:
+        class Student:
+            class AllStudents(DataFetcherMain):
+                _dates = []
+                _endpoint = "/report/student/all"
+
     class Filter:
         class classes_by_campus(DataFetcherMain):
             _dates = []
