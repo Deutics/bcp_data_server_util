@@ -147,6 +147,11 @@ class DataFetcher:
             class TopStudents(DataFetcherMain):
                 _dates = []
                 _endpoint = "/report/student/top"
+
+            class AtRiskStudents(DataFetcherMain):
+                _dates = []
+                _endpoint = "/report/student/at_risk"
+
     class Filter:
         class classes_by_campus(DataFetcherMain):
             _dates = []
