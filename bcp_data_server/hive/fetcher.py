@@ -144,6 +144,9 @@ class DataFetcher:
                 _dates = []
                 _endpoint = "/report/student/all"
 
+            class TopStudents(DataFetcherMain):
+                _dates = []
+                _endpoint = "/report/student/top"
     class Filter:
         class classes_by_campus(DataFetcherMain):
             _dates = []
