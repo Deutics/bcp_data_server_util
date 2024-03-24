@@ -152,6 +152,10 @@ class DataFetcher:
                 _dates = []
                 _endpoint = "/report/student/all_branch_agg_by_teacher"
 
+            class AllStudentsBranchAggByClass(DataFetcherMain):
+                _dates = []
+                _endpoint = "/report/student/all_branch_agg_by_class"
+
             class TopStudents(DataFetcherMain):
                 _dates = []
                 _endpoint = "/report/student/top"

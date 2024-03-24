@@ -19,7 +19,7 @@ setup(
     packages=find_packages(),
 
     # Project version number:
-    version='1.0.15',
+    version='1.0.16',
 
     # List a license for the project, eg. MIT License
     license='MIT',
