@@ -169,6 +169,11 @@ class DataFetcher:
                 _dates = []
                 _endpoint = "/report/teacher/teacher_list"
 
+        class Subject:
+            class SubjectList(DataFetcherMain):
+                _dates = []
+                _endpoint = "/report/subject/subject_list"
+
         class Class:
             class ClassList(DataFetcherMain):
                 _dates = []
