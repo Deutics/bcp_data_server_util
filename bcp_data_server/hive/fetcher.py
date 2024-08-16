@@ -182,7 +182,7 @@ class DataFetcher:
     class Filter:
         class classes_by_campus(DataFetcherMain):
             _dates = []
-            _endpoint = "/students/classes_by_campus/"
+            _endpoint = "/sections/distinct_classes/"
 
         class teacher_by_subject(DataFetcherMain):
             _dates = []
