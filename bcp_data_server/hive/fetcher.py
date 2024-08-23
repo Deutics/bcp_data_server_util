@@ -180,6 +180,14 @@ class DataFetcher:
             class ClassList(DataFetcherMain):
                 _dates = []
                 _endpoint = "/report/class/class_list"
+        class Region:
+            class RegionReport(DataFetcherMain):
+                _dates = []
+                _endpoint = "/report/region"
+
+            class RegionCampusReport(DataFetcherMain):
+                _dates = []
+                _endpoint = "/report/region/campus"
 
     class Filter:
         class classes_by_campus(DataFetcherMain):
